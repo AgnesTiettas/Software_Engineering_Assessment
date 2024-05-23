@@ -5,13 +5,14 @@ root.title("Primary and Secondary Colours")
 root.geometry("400x400") 
 root.resizable(False,False) #Make sure that the page maintains its size at 400 by 400. 
 
+
 def page2(): # Move to the colour_information page. 
     root.destroy()
     import Colour_Information
 
 
 Label1=Label(root,text="Primary and Secondary Colours", 
-             font=("Times",20),
+             font=("Veranda",20),
              bg= "#d5bdaf", 
              fg="black",
              padx=20,
@@ -46,4 +47,5 @@ Label3=Label(root,text="Click to begin",
              relief="raised",
              borderwidth=0,) #Creating a label widget 
 Label3.pack() 
+
 root.mainloop()

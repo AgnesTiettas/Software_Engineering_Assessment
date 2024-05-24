@@ -15,6 +15,6 @@ Label1=Label(root,text="Question 1",
              pady=30,
              wraplength=400,
              borderwidth=0,) #Creating a label widget 
-Label1.pack() 
+Label1.pack()
 
-root.mainloop()
+

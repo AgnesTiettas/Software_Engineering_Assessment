@@ -10,10 +10,11 @@ root.resizable(False,False) #Make sure that the page maintains its size at 400 b
 def page2(): # Move to the colour_information page. 
     root.destroy()
     import Colour_Information
+    
 
 
 Label1=Label(root,text="Primary and Secondary Colours", 
-             font=("fixedsys",22,"bold"),
+             font=("fixedsys",24,"bold"),
              bg="#fcf5c7",
              fg="black",
              padx=35,
@@ -52,6 +53,8 @@ Label3=Label(root,text="Click to begin",
              pady=10,
              relief="flat",
              borderwidth=0,) #Creating a label widget 
-Label3.pack() 
+Label3.pack()  
+
+
 
 root.mainloop()

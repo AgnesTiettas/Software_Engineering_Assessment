@@ -1,10 +1,10 @@
-from tkinter import * 
+from tkinter import *  #Imports the tkinter module
 from PIL import Image,ImageTk
 root=Tk() 
 root.title("Primary and Secondary Colours")#Title for the window
 root.geometry("400x400") #Window size 
 root.config(bg="#fcf5c7")
-root.resizable(False,False) #Make sure that the page maintains its size at 400 by 400.  
+root.resizable(False,False) #Makes the window non-resizable.  
 
 def homepage(): # Move back to the homepage. 
     root.destroy()
@@ -66,7 +66,7 @@ label4=Label(root,text="Colours which cannot be made by mixing other colours tog
             padx=20,
             pady=5, 
             bg="#fcf5c7", 
-            wraplength=380,
+            wraplength=390,
             borderwidth=0,)
 label4.place(x=0,y=105)
 
@@ -138,20 +138,23 @@ label12=Label(root,text="Red + Yellow = Orange",
             borderwidth=0,)
 label12.place(x=110,y=321)
 
-Quiz_button=Button(root,text="HOME",
+#Home button that goes back to the first page. 
+Home_button=Button(root,text="HOME",
                font=("fixedsys",14),
                pady=8, 
                padx=25,
                bg="#adf7b6", 
                command=homepage) 
-Quiz_button.place(x=15, y=345) 
+Home_button.place(x=15, y=345) 
 
-Home_button=Button(root,text="NEXT",
+
+#
+Quiz_button=Button(root,text="NEXT",
                font=("fixedsys",14),
                pady=8, 
                padx=25,
                bg="#adf7b6", 
                command=Quiz) 
-Home_button.place(x=280,y=345) 
+Quiz_button.place(x=280,y=345) 
 
 root.mainloop()

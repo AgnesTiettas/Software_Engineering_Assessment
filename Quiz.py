@@ -16,31 +16,31 @@ Question1=["Which one is the primary colour?","Which one is the secondary colour
 Options1= [['Yellow','Green','Orange','Purple','Yellow'],['Red','Yellow','Orange','Blue','Orange'], ['Orange','Purple','Blue','Red','Purple'], ['Yellow','Green','Blue','Orange','Yellow'],['Red, Yellow','Orange, Purple','Blue, Red','Yellow, Blue','Yellow, Blue']]
 
 #Creates and displays the label for the questions. 
-label1=Label(root, text=Question1[0], 
+Question=Label(root, text=Question1[0], 
              font=("fixedsys",22,"bold"), 
              wraplength=300,
              padx=10,
              pady=15, 
              bg="#fcf5c7")
-label1.pack()
+Question.pack()
 
 #Creates a instance of value holders for string variables.
-Var1=StringVar(root)
-Var2=StringVar(root)
-Var3=StringVar(root)
-Var4=StringVar(root)
+Variable_1=StringVar(root)
+Variable_2=StringVar(root)
+Variable_3=StringVar(root)
+Variable_4=StringVar(root)
 
 #Radio buttons for the 4 options that the user can select.
-radio_btn1= Radiobutton(root,variable=Var1,
+radio_btn1= Radiobutton(root,variable=Variable_1,
                         font=("fixedsys",18),
-                        padx=10,
+                        padx=15,
                         pady=10, 
                         bg="#fcf5c7",
                         wraplength=300,
                         command=lambda:Answer_Verification(radio_btn1))
 
 
-radio_btn2= Radiobutton(root,variable=Var2,
+radio_btn2= Radiobutton(root,variable=Variable_2,
                         font=("fixedsys",18), 
                         padx=15,
                         pady=5, 
@@ -50,7 +50,7 @@ radio_btn2= Radiobutton(root,variable=Var2,
 
 
 radio_btn3= Radiobutton(root,
-                        variable=Var3,
+                        variable=Variable_3,
                         font=("fixedsys",18), 
                         padx=15,
                         pady=5, 
@@ -60,7 +60,7 @@ radio_btn3= Radiobutton(root,
 
  
 radio_btn4= Radiobutton(root,
-                        variable=Var4,
+                        variable=Variable_4,
                         font=("fixedsys",18),
                         padx=15,
                         pady=5, 
@@ -126,7 +126,7 @@ def Next_question(): # Function for moving to the next question.
 
     if Question_number==5: # IF statment for if the question number is equal to 5 (the last question). 
 
-        label1.destroy() #Gets rid of the question on the page.
+        Question.destroy() #Gets rid of the question on the page.
         radio_btn1.destroy() #Gets rid of the first radiobutton on the page. 
         radio_btn2.destroy() #Gets rid of the second radiobutton on the page. 
         radio_btn3.destroy() #Gets rid of the third radiobutton on the page. 
@@ -136,22 +136,22 @@ def Next_question(): # Function for moving to the next question.
 
         
         #Label that displays the score at the end of the quiz. 
-        label5= Label(root, 
+        Final_Score= Label(root, 
                       text="Your Final Score is:"+ str(Correct)+ "/5", 
                       font=("fixedsys",38),
                       bg="#fcf5c7",
                       wraplength=380)
-        label5.place(x=40, y=80)
+        Final_Score.place(x=40, y=80)
 
         #Button that 
-        l6=Button(root, 
+        Home_Button=Button(root, 
                   text='HOME', 
                   font=("fixedsys",20), 
                   padx=15,
                   pady=10, 
                   bg="#adf7b6", 
                   command=homepage)
-        l6.place(x=20, y=300)
+        Home_Button.place(x=20, y=300)
 
         Quit_Button=Button(root, 
                            text="EXIT",
@@ -164,7 +164,7 @@ def Next_question(): # Function for moving to the next question.
         
 
     else:
-        label1['text']=Question1[Question_number]
+        Question['text']=Question1[Question_number]
         disable_buttons('normal') # Initialises state of next buttons
 
         #Shows each radiobutton option for the relavent question based on the
@@ -175,10 +175,10 @@ def Next_question(): # Function for moving to the next question.
         radio_btn4['text'] = Options[3]
 
         #Sets the default value 
-        Var1.set(Options[0])
-        Var2.set(Options[1])
-        Var3.set(Options[2])
-        Var4.set(Options[3])
+        Variable_1.set(Options[0])
+        Variable_2.set(Options[1])
+        Variable_3.set(Options[2])
+        Variable_4.set(Options[3])
 
         Question_feedback.config(text="")
 

@@ -2,18 +2,19 @@ from tkinter import * #imports all symbols from tkinter module into the current 
 from PIL import Image,ImageTk
 root=Tk() 
 root.title("Primary and Secondary Colours")
-root.geometry("410x410") #Make sure that the page maintains its size at 450 by 450. 
+root.geometry("410x410") #Make sure that the page maintains its size at 410 by 450. 
 root.config(bg="#fcf5c7") # Sets the background colour of the page. 
-root.resizable(False,False) #Make sure that the page maintains its size at 400 by 400. 
+root.resizable(False,False) #Make sure that the page is not resizable.  
 
 
 def page2(): # Move to the colour_information page. 
-    root.destroy()
-    import Colour_Information
+     root.destroy()#Destroys the current window.
+     import Colour_Information #Imports the colour information page.
+
     
 
-
-Label1=Label(root,text="Primary and Secondary Colours", 
+#Header of the page 
+Header=Label(root,text="Primary and Secondary Colours", 
              font=("fixedsys",24,"bold"),
              bg="#fcf5c7",
              fg="black",
@@ -21,10 +22,10 @@ Label1=Label(root,text="Primary and Secondary Colours",
              pady=30,
              wraplength=400,
              borderwidth=0,) #Creating a label widget 
-Label1.pack() 
+Header.pack() 
 
-
-Label2=Label(root,text="Let's Learn about Primary and Secondary Colours!", 
+#Subheading for page
+Subheading=Label(root,text="Let's Learn about Primary and Secondary Colours!", 
              font=("fixedsys",16), 
              bg="#fcf5c7",
              fg="black",
@@ -32,20 +33,21 @@ Label2=Label(root,text="Let's Learn about Primary and Secondary Colours!",
              padx=0,
              pady=30,
              borderwidth=0,) #Creating a label widget 
-Label2.pack()
+Subheading.pack()
 
 
 
-button1=Button(root,text="START",
+#Creates a start button that moves user to the Colour_Information page. 
+Start_button=Button(root,text="START",
                font=("fixedsys",20),
                pady=20, 
                padx=60,
                bg="#adf7b6", 
                command=page2) 
-button1.pack() 
+Start_button.pack() 
 
-
-Label3=Label(root,text="Click to begin", 
+#Start button subheading providing instructions.
+Button_Subheading=Label(root,text="Click to begin", 
              font=("fixedsys",12,"italic"), 
              bg="#fcf5c7",
              fg="black",
@@ -53,8 +55,7 @@ Label3=Label(root,text="Click to begin",
              pady=10,
              relief="flat",
              borderwidth=0,) #Creating a label widget 
-Label3.pack()  
-
+Button_Subheading.pack()  
 
 
 root.mainloop()

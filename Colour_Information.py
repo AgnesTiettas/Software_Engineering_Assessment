@@ -1,5 +1,4 @@
 from tkinter import *  #Imports the tkinter module
-from PIL import Image,ImageTk
 root=Tk() 
 root.title("Primary and Secondary Colours")#Title for the window
 root.geometry("410x410") #Window size 
@@ -70,6 +69,8 @@ Primary_colours_information=Label(root,text="Colours which cannot be made by mix
             borderwidth=0,)
 Primary_colours_information.place(x=0,y=105)
 
+
+# Subheading for the information on secondary colours. 
 Secondary_colours_subheading=Label(root,text="Secondary Colours", 
             font=("fixedsys",13,"underline"),
             padx=20,
@@ -148,7 +149,7 @@ Home_button=Button(root,text="HOME",
 Home_button.place(x=15, y=345) 
 
 
-#button that goes to the quiz page. 
+#Button that goes to the quiz page. 
 Quiz_button=Button(root,text="QUIZ",
                font=("fixedsys",14),
                pady=8, 

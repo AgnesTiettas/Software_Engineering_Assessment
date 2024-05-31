@@ -1,7 +1,6 @@
 from tkinter import * #imports all symbols from tkinter module into the current namespace 
-from PIL import Image,ImageTk
 root=Tk() 
-root.title("Primary and Secondary Colours")
+root.title("Primary and Secondary Colours") # Sets the title of the window
 root.geometry("410x410") #Make sure that the page maintains its size at 410 by 450. 
 root.config(bg="#fcf5c7") # Sets the background colour of the page. 
 root.resizable(False,False) #Make sure that the page is not resizable.  

@@ -80,11 +80,14 @@ Next_btn=Button(root,
 
 Next_btn.place(x=145, y=310)
 
+
 #Displays all the radiobuttons on the screen and anchors it to the left. 
 radio_btn1.pack(anchor=W)
 radio_btn2.pack(anchor=W)
 radio_btn3.pack(anchor=W)
 radio_btn4.pack(anchor=W) 
+
+
 
 #Sets the Question number and number of correct questions as 0. 
 Question_number=0 
@@ -113,24 +116,26 @@ def Answer_Verification(radio):
     
     if radio['text'] == Options1 [Question_number][4]: # IF statement for if the selected option is correct.
         Correct+=1 #Increases the value of the correct answers by 1 if the option selected is correct. 
-        Question_feedback.config(text="Correct, Good Job!", fg="green")
+        Question_feedback.config(text="Correct, Good Job!", fg="green")  # Displays the feedback to the user stating that they are correct.
     else:
-        Question_feedback.config(text="Incorrect, Great Effort!", fg="red")
+        Question_feedback.config(text="Incorrect, Great Effort!", fg="red") # Displays the feedback to the user stating that they are incorrect.
         
 
     Question_number+=1 #Increases the value of the Question number by 1 whether or not the the answer selected is correct. 
     disable_buttons('disable') # Disables the radiobuttons and calls upon the function. 
   
+
 def Next_question(): # Function for moving to the next question. 
     global Question_number,  Correct #Create a variable that is global (does not just apply to just the one function)
 
     if Question_number==5: # IF statment for if the question number is equal to 5 (the last question). 
 
-        Question.destroy() #Gets rid of the question on the page.
-        radio_btn1.destroy() #Gets rid of the first radiobutton on the page. 
-        radio_btn2.destroy() #Gets rid of the second radiobutton on the page. 
-        radio_btn3.destroy() #Gets rid of the third radiobutton on the page. 
-        radio_btn4.destroy() #Gets rid of the fourth radiobutton on the page.
+        # Gets rid of the question, radio buttons, next button and question feedback on the page.
+        Question.destroy() 
+        radio_btn1.destroy() 
+        radio_btn2.destroy() 
+        radio_btn3.destroy() 
+        radio_btn4.destroy() 
         Next_btn.destroy() 
         Question_feedback.destroy()
 
@@ -143,7 +148,7 @@ def Next_question(): # Function for moving to the next question.
                       wraplength=380)
         Final_Score.place(x=40, y=80)
 
-        #Button that 
+        #Button that goes back to the Primary and Secondary Colours page (homepage)
         Home_Button=Button(root, 
                   text='HOME', 
                   font=("fixedsys",20), 
@@ -153,6 +158,7 @@ def Next_question(): # Function for moving to the next question.
                   command=homepage)
         Home_Button.place(x=20, y=300)
 
+        #Button that exits the program when clicked
         Quit_Button=Button(root, 
                            text="EXIT",
                            font=("fixedsys",20),
@@ -167,7 +173,7 @@ def Next_question(): # Function for moving to the next question.
         Question['text']=Question1[Question_number]
         disable_buttons('normal') # Initialises state of next buttons
 
-        #Shows each radiobutton option for the relavent question based on the
+        #Shows each radiobutton option for the relavent question based on the index value 
         Options= Options1[Question_number]
         radio_btn1['text'] = Options[0] 
         radio_btn2['text'] = Options[1]
@@ -180,7 +186,7 @@ def Next_question(): # Function for moving to the next question.
         Variable_3.set(Options[2])
         Variable_4.set(Options[3])
 
-        Question_feedback.config(text="")
+        Question_feedback.config(text="") #Empties the question feedback section
 
         # Show score button once the question number reaches 4.
         if Question_number == 4:
